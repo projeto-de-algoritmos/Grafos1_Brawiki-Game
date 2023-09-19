@@ -1,2 +1,2 @@
-data/wiki-topcats.txt filter=lfs diff=lfs merge=lfs -text
-data/old/wiki-topcats.txt filter=lfs diff=lfs merge=lfs -text
+data/pt-wiki-edges-final.txt filter=lfs diff=lfs merge=lfs -text
+data/pt-wiki-edges.txt filter=lfs diff=lfs merge=lfs -text
