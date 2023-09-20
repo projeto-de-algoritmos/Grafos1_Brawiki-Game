@@ -24,7 +24,7 @@ def get_all_pages_from_category(category, forbidden_keywords, level=0, max_level
                  get_all_pages_from_category(c.categorymembers, forbidden_keywords, level=level + 1, max_level=max_level)
 
 def filter_pages(input_file_path, output_file_path):
-    forbidden_keywords = ["categoria", "lista", "(a)", "usuário:", "usuária:", "campeonato", "discussão", "wikipédia"]
+    forbidden_keywords = ["categoria", "lista", "(a)", "usuário:", "usuária:", "campeonato", "discussão", "wikipédia", "massacre", "chacina"]
     with open(input_file_path, 'r') as file:
         lines = file.readlines()
 
@@ -57,11 +57,10 @@ def filter_edges(input_edges_file, output_filtered_file, pages_file_path):
         pages_set = set(pages_file.read().splitlines())
 
         for line in edges_file:
-            parts = line.split(':')
-            item_name, item_array = parts[0].strip(), parts[1].strip()
+            item_name, item_array = line.strip().split(':', 1)
             item_list = [elem.strip() for elem in item_array.strip("[]").split(',')]
             item_list_no_quotes = [elem.strip("'") for elem in item_list]
-            filtered_list = [elem for elem in item_list_no_quotes if elem in pages_set]
+            filtered_list = [elem.strip() for elem in item_list_no_quotes if elem in pages_set]
             filtered_file.write(f"{item_name}:{filtered_list}\n")
 
 def main():
