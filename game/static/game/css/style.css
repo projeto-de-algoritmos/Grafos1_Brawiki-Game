@@ -1,0 +1,244 @@
+* {
+  border: 0;
+  margin: 0;
+}
+
+body {
+  background-image: url(../img/background-image.svg);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 70px 94px 0 338px;
+}
+
+.title h1 {
+  color: #0F7525;
+  font-family: 'Gotham Pro';
+  font-size: 70px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+}
+
+.title h3 {
+  color: #0F7525;
+  font-family: 'Gotham Pro';
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+}
+
+.how-to-play-btn {
+  width: 235px;
+  height: 63px;
+  flex-shrink: 0;
+  border-radius: 4px;
+  background: #0154B4;
+  box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.30);
+  color: #EFF8E5;
+  font-size: 22px;
+  font-family: Gotham Pro;
+  font-weight: 700;
+  text-transform: uppercase;
+  word-wrap: break-word
+}
+
+.game {
+  padding: 70px 0 0 338px;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+}
+
+.target {
+  padding: 70px 0 0 0;
+}
+
+.card img {
+  width: 230px;
+  height: 230px;
+  flex-shrink: 0;
+}
+
+.character {
+  padding: 0 0 0 24px;
+}
+
+.character p {
+  color: #0F7525;
+  font-family: Gotham Pro;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 8px;
+}
+
+.character-name {
+  color: #0F7525;
+  font-family: Gotham Pro;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.img-character {
+  border-radius: 10px;
+  box-shadow: 0px 0px 40px 0px rgba(14, 15, 16, 0.30);
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  margin-top: 70px;
+}
+
+footer .start-btn {
+  width: 229.89px;
+  height: 63.418px;
+  flex-shrink: 0;
+  border-radius: 4px;
+  background: #0F7525;
+  box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.30);
+  color: #EFF8E5;
+  text-align: center;
+  font-family: Gotham Pro;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+footer .new-character-btn {
+  width: 63.418px;
+  height: 63.418px;
+  flex-shrink: 0;
+  border-radius: 4px;
+  background: #0055B8;
+  box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.30);
+  margin-left: 24px;
+}
+
+.seconds {
+  position: relative;
+  right: 235px;
+  top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 65.89px;
+  height: 29.524px;
+  flex-shrink: 0;
+  border-radius: 4px;
+  background: #13A933;
+  box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.30);
+  color: #EFF8E5;
+  text-align: center;
+  font-family: Gotham Pro;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  z-index: 1;
+}
+
+/* HOW TO PLAY MODAL */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: rgba( 239, 248, 229, 0.10);
+  backdrop-filter: blur(2px);
+}
+
+.modal-content {
+background-color: #FAE100;
+margin: 8% auto;
+padding: 20px;
+width: 80%;
+max-width: 500px;
+text-align: center;
+border: 1px solid #EFF8E5;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.modal-header {
+padding: 0;
+margin: 0;
+color: #0F7525;
+text-align: center;
+font-family: Gotham Pro;
+font-size: 50px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+margin-bottom: 32px;
+}
+
+.modal-body {
+  color: #0272F7;
+  font-family: Gotham Pro;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-align: left;
+  margin-bottom: 8px;
+}
+
+ol.rules li {
+  margin-bottom: 24px;
+}
+
+.modal-footer button{
+  border-radius: 4px;
+  background: #0154B4;
+  box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.30);
+  width: 197.698px;
+  height: 53px;
+  flex-shrink: 0;
+  color: #EFF8E5;
+  text-align: center;
+  font-family: Gotham Pro;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.modal-footer button:hover,
+.how-to-play-btn:hover,
+footer .new-character-btn:hover
+{
+  background: #0075FF;
+  transition: background-color 0.3s, color 0.3s; 
+}
+
+footer .start-btn:hover
+{
+  background: #11AB32;
+  transition: background-color 0.3s, color 0.3s; 
+}
+
+ol.rules li strong {
+  font-weight: 500;
+}
+
+button {
+  cursor: pointer;
+}
