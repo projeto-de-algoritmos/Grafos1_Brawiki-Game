@@ -1,4 +1,4 @@
-import wikipediaapi
+import wikipediaapi #python -m pip install wikipedia-api
 
 def get_wikipedia_api(language='pt'):
     return wikipediaapi.Wikipedia(
@@ -14,14 +14,14 @@ def filter_categories(categories, forbidden_keywords):
             filtered_categories.append(category)
     return filtered_categories
 
-def get_all_pages_from_category(category, forbidden_keywords, level=0, max_level=4):
-    with open('data/pt-wiki-pages.txt', "a") as output:
+def get_all_pages_from_category(category, forbidden_keywords, directory, level=0, max_level=4):
+    with open(directory, "a",encoding="utf-8") as output:
         for c in category.values():
             if not any(keyword in c.title.lower() for keyword in forbidden_keywords):
                 output.write(f"{c.title}\n")
 
             if c.ns == wikipediaapi.Namespace.CATEGORY and level < max_level:
-                 get_all_pages_from_category(c.categorymembers, forbidden_keywords, level=level + 1, max_level=max_level)
+                 get_all_pages_from_category(c.categorymembers, forbidden_keywords,directory, level=level + 1, max_level=max_level)
 
 def filter_pages(input_file_path, output_file_path):
     forbidden_keywords = ["categoria", "lista", "(a)", "usuário:", "usuária:", "campeonato", "discussão", "wikipédia", "massacre", "chacina"]
@@ -68,11 +68,11 @@ def main():
     wiki_api = get_wikipedia_api()
     category = wiki_api.page("Categoria:Brasil")
 
-    get_all_pages_from_category(category.categorymembers, forbidden_keywords)
-    filter_pages('data/pt-wiki-pages.txt', 'data/pt-wiki-pages-without-categories-pages.txt')
-    remove_duplicates_pages('data/pt-wiki-pages-without-categories-pages.txt', 'data/pt-wiki-pages-final.txt')
-    extract_edges('data/pt-wiki-pages-final.txt', 'data/pt-wiki-edges.txt', wiki_api)
-    filter_edges('data/pt-wiki-edges.txt', 'data/pt-wiki-edges-final.txt', 'data/pt-wiki-pages-final.txt')
+    get_all_pages_from_category(category.categorymembers, forbidden_keywords, '../data/pt-wiki-pages.txt')
+    filter_pages('../data/pt-wiki-pages.txt', '../data/pt-wiki-pages-without-categories-pages.txt')
+    remove_duplicates_pages('../data/pt-wiki-pages-without-categories-pages.txt', '../data/pt-wiki-pages-final.txt')
+    extract_edges('../data/pt-wiki-pages-final.txt', '../data/pt-wiki-edges.txt', wiki_api)
+    filter_edges('../data/pt-wiki-edges.txt', '../data/pt-wiki-edges-final.txt', '../data/pt-wiki-pages-final.txt')
     
 if __name__ == "__main__":
     main()
