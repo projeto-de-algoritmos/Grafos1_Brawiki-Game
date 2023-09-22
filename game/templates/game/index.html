@@ -62,42 +62,7 @@
       </section>
     </div>
   </div>
-  <script>
-    var countElement = document.getElementById('count');
-    var count = parseInt(countElement.innerText);
 
-    function atualizarcount() {
-        count--;
-        countElement.innerText = count;
-
-        // if (count <= 0) {
-        //     clearInterval(interval);
-        //     window.location.href = '/';  // Redirecionar quando o count chegar a zero
-        // }
-    }
-
-    var interval = setInterval(atualizarcount, 1000);  // Atualizar a cada segundo
-    // JavaScript para abrir e fechar o modal
-    var modal = document.getElementById("myModal");
-    var btnAbrirModal = document.getElementById("openModalBtn");
-    var btnFecharModal = document.getElementById("closeModalBtn");
-
-    // Abre o modal quando o botão é clicado
-    btnAbrirModal.onclick = function() {
-        modal.style.display = "block";
-    }
-
-    // Fecha o modal quando o botão "X" é clicado
-    btnFecharModal.onclick = function() {
-        modal.style.display = "none";
-    }
-
-    // Fecha o modal quando o usuário clica fora do modal
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    }
-  </script>
+  <script src="{% static 'game/js/script.js' %}"></script>
 </body>
 </html>

@@ -7,7 +7,7 @@
 |Matrícula | Aluno |
 | -- | -- |
 | 17/0140571 | Douglas Farias de Castro |
-| xx/xxxxxx  | Guilherme Peixoto |
+| 17/0034941  | Guilherme Peixoto |
 
 ## Sobre 
 Descreva os objetivos do seu projeto e como ele funciona. 
