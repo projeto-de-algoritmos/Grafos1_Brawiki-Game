@@ -11,7 +11,7 @@ function updateCount() {
     }
 }
 
-var interval = setInterval(updateCount, 1000);
+var interval = setInterval(updateCount, 100000);
 var modal = document.getElementById("myModal");
 var openModalBtn = document.getElementById("openModalBtn");
 var closeModalBtn = document.getElementById("closeModalBtn");

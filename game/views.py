@@ -3,7 +3,7 @@ from scripts import bfs
 
 
 def index(request):
-    tempo_inicial = 2
+    tempo_inicial = 100
     default_img = "/static/game/img/default-img.svg"
 
     graph = bfs.build_graph()
