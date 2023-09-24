@@ -1,0 +1,31 @@
+{% load static %}
+{% include "./parts/head.html" %}
+
+<div class="container">
+  <section class="sidebar">
+    <header class="sidebar-header">
+      <section class="title">
+        <h1>Brawiki</h1>
+        <h3>Game</h3>
+      </section>
+    </header>
+    <div class="sidebar-card">
+      <div class="source">
+        <p>Inicia com:</p>
+        <h4 class="character-name">{{source}}</h4>
+      </div>
+      <div class="target">
+        <p>Objetivo:</p>
+        <h4 class="character-name">{{ target }}</h4>
+      </div>
+    </div>
+  </section>
+  <div class="bar"></div>
+  <div class="wiki-frame">
+    {{ html_page|safe }}
+  </div>
+</div>
+<footer class="wiki-footer">
+  <button class="drop-btn">DESISTIR</button>
+</footer>
+{% include "./parts/footer.html" %}

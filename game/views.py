@@ -3,7 +3,7 @@ from scripts import bfs
 
 
 def index(request):
-    tempo_inicial = 100
+    tempo_inicial = "gl"
     default_img = "/static/game/img/default-img.svg"
 
     graph = bfs.build_graph()
@@ -27,3 +27,18 @@ def index(request):
     
     return render(request, "game/index.html", context)
 
+def round(request):
+    source = request.GET.get('source')
+    target = request.GET.get('target')
+
+    html_page = bfs.get_html_page(source)
+
+    context = {
+        'source': source,
+        'target': target,
+        'source_url': source.replace(' ', '_'),
+        'html_page': html_page
+    }
+
+    print(source, target)
+    return render(request, "game/round.html", context)
