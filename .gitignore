@@ -1,2 +1,4 @@
 env
 /data/old/ptwiki-latest-pages-meta-current.xml
+/__pycache__
+*.pyc

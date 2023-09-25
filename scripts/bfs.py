@@ -4,12 +4,12 @@ import random
 import requests
 import json
 import wikipediaapi
-from scripts.pilot import *
+# from scripts.pilot import *
 
-shortestPath = []
+# shortestPath = []
 def get_nodes():
     try:
-        with open("../data/pt-wiki-pages-final.txt", 'r') as file:
+        with open("data/pt-wiki-pages-final.txt", 'r') as file:
             lines = file.readlines()
 
         nodes = [line.strip() for line in random.sample(lines, 2)]
@@ -21,7 +21,7 @@ def get_nodes():
 
 def build_graph():
     graph = {}
-    with open('../data/pt-wiki-edges-final.txt', 'r' ,encoding='utf-8') as file:
+    with open('data/pt-wiki-edges-final.txt', 'r' ,encoding='utf-8') as file:
         for line in file:
             key, neighbors_str = line.strip().split(':', 1)
             neighbors = [neighbor.strip() for neighbor in neighbors_str.strip('[]').split(',')]
@@ -90,8 +90,8 @@ def get_html_page(search_term):
     except:
         return None
 
-def getGraphShortestPath():
-    path = bfs(build_graph(), "Guilherme Bellintani", "Saci")
-    pilot(path)
+# def getGraphShortestPath():
+#     path = bfs(build_graph(), "Guilherme Bellintani", "Saci")
+#     pilot(path)
 
-getGraphShortestPath()
+# getGraphShortestPath()

@@ -14,19 +14,13 @@ def add_attr_html(page, source, target):
 
 def index(request):
     default_img = "/static/game/img/default-img.svg"
-    graph = bfs.build_graph()
-    nodes = None
-    path = None
-
-    while path is None:
-        nodes = bfs.get_nodes()
-        path = bfs.bfs(graph, nodes[0], nodes[1])
+    nodes = bfs.get_nodes()
 
     source_img = bfs.get_page_thumb(nodes[0]) or default_img
     target_img = bfs.get_page_thumb(nodes[1]) or default_img
 
     context = {
-        'tempo_inicial': "gl",
+        'tempo_inicial': "",
         'source': nodes[0],
         'target': nodes[1],
         'source_img': source_img,
