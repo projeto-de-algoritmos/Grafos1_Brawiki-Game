@@ -18,14 +18,14 @@ def add_attr_html(page, source, target, num_clicks, my_path):
     return str(soup)
 
 def index(request):
+    search_type = request.GET.get('search_type')
     default_img = "/static/game/img/default-img.svg"
-    nodes = graph.get_nodes('bfs')
+    nodes = graph.get_nodes(search_type)
 
     source_img = util.get_page_thumb(nodes[0]) or default_img
     target_img = util.get_page_thumb(nodes[1]) or default_img
 
     context = {
-        'tempo_inicial': 100,
         'source': nodes[0],
         'target': nodes[1],
         'source_img': source_img,

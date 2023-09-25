@@ -54,17 +54,22 @@ class Graph:
   
     def get_nodes(self, search_type):
         try:
-            while True:
-                with open("data/pt-wiki-pages-final.txt", 'r') as file:
-                    lines = file.readlines()
+            with open("data/pt-wiki-pages-final.txt", 'r') as file:
+                lines = file.readlines()
 
+            while True:
                 nodes = [line.strip() for line in random.sample(lines, 2)]
+                source = nodes[0]
+                target = nodes[1]
+
                 if search_type == 'bfs':
-                    if self.bfs(nodes[0], nodes[1]):
-                        return nodes
-                else: 
-                    if self.dfs(nodes[0], nodes[1]):
-                        return nodes
+                    result = self.bfs(source, target)
+                else:
+                    result = self.dfs(source, target)
+                    
+                if result is not None or result == True:
+                    return nodes
+            
 
         except FileNotFoundError:
             return None
