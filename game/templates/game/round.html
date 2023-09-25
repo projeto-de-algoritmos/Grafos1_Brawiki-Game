@@ -26,6 +26,24 @@
   </div>
 </div>
 <footer class="wiki-footer">
-  <button class="drop-btn">DESISTIR</button>
+  {% if target_found %}
+    <button class="done-btn" id="openModalBtn">CONCLUIR</button>
+  {% else %}
+    <button class="drop-btn">DESISTIR</button>
+  {% endif %}
 </footer>
+
+<div id="myModal" class="modal modal-victory">
+  <div class="modal-content">
+    <div class="header">
+      <h1>PARABÉÉÉÉÉNS!</h1>
+      <button id="closeModalBtn">X</button>
+    </div>
+    
+    <img src="{% static 'game/img/win.gif' %}" alt="Vitória">
+    <h1>VOCÊ CHEGOU NO OBJETIVO!</h1>
+    <a href="/" class="drop-btn" style="margin-top: 30px;">PÁGINA INICIAL</>
+  </div>
+</div>
+
 {% include "./parts/footer.html" %}

@@ -74,6 +74,10 @@ def get_html_page(search_term):
             for attr_name, attr_value in tag.attrs.items():
                 if 'Wikipédia:' in attr_value:
                     tag.extract()
+        
+        tags_to_remove = soup.find_all(href=lambda href: href and 'Ficheiro:' in href)
+        for tag in tags_to_remove:
+            tag.attrs.pop('href', None)
 
         for id_to_remove in ["Referências", "Ligações_externas"]:
             for tag in soup.find_all(id=id_to_remove):

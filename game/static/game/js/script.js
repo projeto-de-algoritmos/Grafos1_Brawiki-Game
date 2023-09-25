@@ -1,17 +1,18 @@
-var countElement = document.getElementById('count');
-var count = parseInt(countElement.innerText);
+// var countElement = document.getElementById('count');
+// var count = parseInt(countElement.innerText);
 
-function updateCount() {
-    count--;
-    countElement.innerText = count;
+// function updateCount() {
+//     count--;
+//     countElement.innerText = count;
 
-    if (count <= 0) {
-        clearInterval(interval);
-        window.location.href = '/';
-    }
-}
+//     if (count <= 0) {
+//         clearInterval(interval);
+//         window.location.href = '/';
+//     }
+// }
 
-var interval = setInterval(updateCount, 100000);
+// var interval = setInterval(updateCount, 100000);
+
 var modal = document.getElementById("myModal");
 var openModalBtn = document.getElementById("openModalBtn");
 var closeModalBtn = document.getElementById("closeModalBtn");

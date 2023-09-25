@@ -1,6 +1,7 @@
 * {
   border: 0;
   margin: 0;
+  font-family: 'Gotham Pro';
 }
 
 body {
@@ -14,22 +15,30 @@ header {
   padding: 70px 94px 0 338px;
 }
 
-.title h1 {
+.title h1, .title h3, .card .character p, 
+.card h4, .modal-header, .sidebar-card  .source p, 
+.sidebar-card  .target p, .modal-content h1,
+.sidebar-card  .source  .character-name,
+.sidebar-card  .target  .character-name {
   color: #0F7525;
-  font-family: 'Gotham Pro';
-  font-size: 70px;
+}
+
+.title h1, .title h3, .card .character p,
+.card h4, footer .start-btn, .seconds,
+.modal-header, .modal-body, .modal-footer button,
+.drop-btn, .done-btn {
   font-style: normal;
-  font-weight: 900;
   line-height: normal;
 }
 
+.title h1 {
+  font-size: 70px;
+  font-weight: 900;
+}
+
 .title h3 {
-  color: #0F7525;
-  font-family: 'Gotham Pro';
   font-size: 40px;
-  font-style: normal;
   font-weight: 400;
-  line-height: normal;
 }
 
 .how-to-play-btn {
@@ -41,7 +50,6 @@ header {
   box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.30);
   color: #EFF8E5;
   font-size: 22px;
-  font-family: Gotham Pro;
   font-weight: 700;
   text-transform: uppercase;
   word-wrap: break-word
@@ -66,22 +74,14 @@ header {
 }
 
 .card .character p {
-  color: #0F7525;
-  font-family: Gotham Pro;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
   margin-bottom: 8px;
+  font-size: 20px;
+  font-weight: 400;
 }
 
 .card h4 {
-  color: #0F7525;
-  font-family: Gotham Pro;
   font-size: 30px;
-  font-style: normal;
   font-weight: 700;
-  line-height: normal;
 }
 
 .img-character {
@@ -91,7 +91,6 @@ header {
   border-radius: 10px;
   box-shadow: 0px 0px 40px 0px rgba(14, 15, 16, 0.30);
   overflow: hidden;
-  /* text-align: center; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -118,11 +117,8 @@ footer .start-btn {
   box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.30);
   color: #EFF8E5;
   text-align: center;
-  font-family: Gotham Pro;
   font-size: 22px;
-  font-style: normal;
   font-weight: 700;
-  line-height: normal;
   text-transform: uppercase;
   display: grid;
   justify-items: center; 
@@ -158,11 +154,8 @@ footer .new-character-btn {
   box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.30);
   color: #EFF8E5;
   text-align: center;
-  font-family: Gotham Pro;
   font-size: 15px;
-  font-style: normal;
   font-weight: 700;
-  line-height: normal;
   z-index: 1;
 }
 
@@ -180,38 +173,31 @@ footer .new-character-btn {
 }
 
 .modal-content {
-background-color: #FAE100;
-margin: 8% auto;
-padding: 20px;
-width: 80%;
-max-width: 500px;
-text-align: center;
-border: 1px solid #EFF8E5;
-display: flex;
-flex-direction: column;
-align-items: center;
+  background-color: #FAE100;
+  margin: 8% auto;
+  padding: 20px;
+  width: 450px;
+  text-align: center;
+  border: 1px solid #EFF8E5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .modal-header {
-padding: 0;
-margin: 0;
-color: #0F7525;
-text-align: center;
-font-family: Gotham Pro;
-font-size: 50px;
-font-style: normal;
-font-weight: 700;
-line-height: normal;
-margin-bottom: 32px;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  font-family: Gotham Pro;
+  font-size: 50px;
+  font-weight: 700;
+  margin-bottom: 32px;
 }
 
 .modal-body {
   color: #0272F7;
-  font-family: Gotham Pro;
   font-size: 25px;
-  font-style: normal;
   font-weight: 400;
-  line-height: normal;
   text-align: left;
   margin-bottom: 8px;
 }
@@ -220,7 +206,7 @@ ol.rules li {
   margin-bottom: 24px;
 }
 
-.modal-footer button{
+.modal-footer button {
   border-radius: 4px;
   background: #0154B4;
   box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.30);
@@ -229,24 +215,22 @@ ol.rules li {
   flex-shrink: 0;
   color: #EFF8E5;
   text-align: center;
-  font-family: Gotham Pro;
   font-size: 18px;
-  font-style: normal;
   font-weight: 700;
-  line-height: normal;
   text-transform: uppercase;
 }
 
 .modal-footer button:hover,
 .how-to-play-btn:hover,
-footer .new-character-btn:hover
+footer .new-character-btn:hover,
+.drop-btn:hover
 {
   background: #0075FF;
   transition: background-color 0.3s, color 0.3s; 
 }
 
-footer .start-btn:hover
-{
+footer .start-btn:hover,
+.done-btn:hover {
   background: #11AB32;
   transition: background-color 0.3s, color 0.3s; 
 }
@@ -268,7 +252,6 @@ body {
   justify-content: space-between;
   height: 750px;
   padding: 70px 0 0 338px;
-  /* overflow-y: hidden; */
 }
 .sidebar {
   display: flex;
@@ -311,7 +294,8 @@ body {
   justify-content: start;
 }
 
-.drop-btn {
+.drop-btn,
+.done-btn {
   width: 235px !important;
   height: 63px;
   flex-shrink: 0;
@@ -321,13 +305,18 @@ body {
   width: auto;
   color: #EFF8E5;
   text-align: center;
-  font-family: Gotham Pro;
   font-size: 22px;
-  font-style: normal;
   font-weight: 700;
-  line-height: normal;
   text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+.done-btn {
+  background: #0F7525;
+}
+
 .bar {
   background-color: #EFF8E5;
   height: 100%;
@@ -345,9 +334,7 @@ body {
 .sidebar-card  .source p, 
 .sidebar-card  .target p {
   display: inline;
-  color: #0F7525;
   font-size: 22px;
-  font-family: Gotham Pro;
   font-weight: 700;
   word-wrap: break-word;
 }
@@ -355,9 +342,7 @@ body {
 .sidebar-card  .source  .character-name,
 .sidebar-card  .target  .character-name {
   display: inline;
-  color: #0F7525;
   font-size: 22px;
-  font-family: Gotham Pro;
   font-weight: 400;
   word-wrap: break-word;
 }
@@ -410,3 +395,44 @@ body {
   padding-bottom: 4px;
 }
 
+.modal-content h1 {
+  text-align: center;
+  display: inline;
+}
+
+.modal-victory .modal-content {
+  height: 550px;
+  width: 700px;
+  z-index: 1;
+  backdrop-filter: blur(2px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+} 
+
+.modal-victory .modal-content img {
+  margin: 30px 0;
+}
+
+.modal-content .header {
+    display: flex;
+    align-items: center;
+}
+
+.modal-content .header button {
+  display: inline;
+  font-weight: 900;
+  font-size: 40px;
+  color: #C50023;
+  background-color: transparent;
+  position: fixed;
+  top: 45px;
+  right: 45px;
+  margin-top: ;
+}
+
+.modal-content .header button:hover {
+  color: #FF002E;
+  transition: color 0.3s, color 0.3s;
+}
