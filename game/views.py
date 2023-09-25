@@ -43,13 +43,21 @@ def round(request, page):
         shortest_path = bfs.getGraphShortestPath(source, target)
         shortest_path = ' ⮕ '.join(shortest_path)
 
+        my_path = my_path.strip(',').replace(',', ' ⮕ ')
+        
+        if my_path.count('⮕') == shortest_path.count('⮕'):
+            title_path = "Caminho alternativo:"
+        else:
+            title_path = "Caminho mais curto:"
+
         context = {
             'source': source,
             'target': target,
             'html_page': html_page,
             'num_clicks': num_clicks,
             'shortest_path': shortest_path,
-            'my_path': my_path.strip(',').replace(',', ' ⮕ '),
+            'my_path': my_path,
+            'title_path': title_path,
             'target_found': True,
         }
     else:
