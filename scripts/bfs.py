@@ -4,7 +4,7 @@ import random
 import requests
 import json
 import wikipediaapi
-from pilot import *
+from scripts.pilot import *
 
 shortestPath = []
 def get_nodes():
