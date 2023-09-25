@@ -9,12 +9,15 @@ import wikipediaapi
 # shortestPath = []
 def get_nodes():
     try:
-        with open("data/pt-wiki-pages-final.txt", 'r') as file:
-            lines = file.readlines()
+        while True:
+            with open("data/pt-wiki-pages-final.txt", 'r') as file:
+                lines = file.readlines()
 
-        nodes = [line.strip() for line in random.sample(lines, 2)]
+            nodes = [line.strip() for line in random.sample(lines, 2)]
+            path = bfs(build_graph(), nodes[0], nodes[1])
 
-        return nodes
+            if path is not None:
+                return nodes
 
     except FileNotFoundError:
         return None 
@@ -90,8 +93,9 @@ def get_html_page(search_term):
     except:
         return None
 
-# def getGraphShortestPath():
-#     path = bfs(build_graph(), "Guilherme Bellintani", "Saci")
+def getGraphShortestPath(source, target):
+    return bfs(build_graph(), source, target)
 #     pilot(path)
 
 # getGraphShortestPath()
+

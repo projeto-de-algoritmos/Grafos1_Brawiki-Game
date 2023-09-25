@@ -19,6 +19,12 @@
         <h4 class="character-name">{{ target }}</h4>
       </div>
     </div>
+    <div class="info-game">
+      <div class="clicks">
+        <strong>CLIQUES:&nbsp;&nbsp;</strong> 
+        <span>{{num_clicks}}</span>
+      </div>
+    </div>
   </section>
   <div class="bar"></div>
   <div class="wiki-frame">
@@ -29,7 +35,7 @@
   {% if target_found %}
     <button class="done-btn" id="openModalBtn">CONCLUIR</button>
   {% else %}
-    <button class="drop-btn">DESISTIR</button>
+    <a href="/" class="drop-btn">DESISTIR</a>
   {% endif %}
 </footer>
 
@@ -42,7 +48,17 @@
     
     <img src="{% static 'game/img/win.gif' %}" alt="Vitória">
     <h1>VOCÊ CHEGOU NO OBJETIVO!</h1>
-    <a href="/" class="drop-btn" style="margin-top: 30px;">PÁGINA INICIAL</>
+
+    <div class="path" style="background-color: #11AB32; margin-top: 30px;">
+      <strong>Caminho percorrido:</strong><br>
+      {{my_path}}
+    </div>
+    <div class="path" style="background-color: #0075FF; margin-top: 15px;">
+      <strong>Caminho mais curto:</strong><br>
+      {{shortest_path}}
+    </div>
+
+    <a href="/" class="drop-btn" style="margin-top: 30px; font-size: 15px;">PÁGINA INICIAL</a>
   </div>
 </div>
 
