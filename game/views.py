@@ -44,7 +44,7 @@ def round(request, page):
         html_page = util.get_html_page(page)
         html_page = add_attr_html(page, source, target, num_clicks, my_path)
 
-        shortest_path = graph.get_graph_shortest_path(source, target)
+        shortest_path = graph.bfs(source, target)
         shortest_path = ' ⮕ '.join(shortest_path)
 
         my_path = my_path.strip(',').replace(',', ' ⮕ ')

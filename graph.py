@@ -16,21 +16,27 @@ class Graph:
         return graph
 
     def dfs(self, start, end):
+        if start == end:
+            False
+
         visited = set()
         stack = [start]
-
+        
         while stack:
-            vertex = stack.pop()
-            if vertex not in visited:
-                if vertex == end:
+            node = stack.pop()
+            if node not in visited:
+                if node == end:
                     return True
-                visited.add(vertex)
-                stack.extend(neighbor for neighbor in self.graph.get(vertex, []) if neighbor not in visited)
+                visited.add(node)
+                stack.extend(neighbor for neighbor in self.graph.get(node, []) if neighbor not in visited)
         
         return False
 
     def bfs(self, source, target):
         if source not in self.graph or target not in self.graph:
+            return None
+
+        if source == target:
             return None
 
         fila = queue.Queue()
@@ -48,9 +54,6 @@ class Graph:
                         if neighbor not in visited:
                             fila.put((neighbor, path + [neighbor]))
         return None
-
-    def get_graph_shortest_path(self, source, target):
-        return self.bfs(source, target)
   
     def get_nodes(self, search_type):
         try:
@@ -62,13 +65,17 @@ class Graph:
                 source = nodes[0]
                 target = nodes[1]
 
-                if search_type == 'bfs':
-                    result = self.bfs(source, target)
-                else:
-                    result = self.dfs(source, target)
+                if source == target:
+                    continue
+
+                if source in self.graph and target in self.graph:
+                    if search_type == 'bfs':
+                        result = self.bfs(source, target)
+                    else:
+                        result = self.dfs(source, target)
                     
-                if result is not None or result == True:
-                    return nodes
+                    if result is not None or result == True:
+                        return nodes
             
 
         except FileNotFoundError:
