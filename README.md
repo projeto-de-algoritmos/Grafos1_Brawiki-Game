@@ -46,10 +46,14 @@ Antes de executá-lo, você deve ter instalado o Python, Pip e Django na sua má
 1. **Entre no diretório do projeto:**
    
    ```bash
-      cd Grafos1_Brawiki-Game.git
+      cd Grafos1_Brawiki-Game
     ```
 
 2. **Ative o ambiente virtual:**
+   
+    ```bash
+      python3 -m venv env 
+    ```
    
     ```bash
       source env/bin/activate
