@@ -80,11 +80,7 @@ Antes de executá-lo, você deve ter instalado o Python, Pip e Django na sua má
 
 ## **Vídeo de Apresentação**
 
-<center>
-<video width="320" height="240" controls>
-  <source src="apresentação.mp4" type="video/mp4">
-</video>
-</center>
+[Apresentação](https://www.canva.com/design/DAFvgob7OC8/watch)
 
 ##  **Referências**
 - [Wikispeedia navigation paths](https://snap.stanford.edu/data/wikispeedia.html)
