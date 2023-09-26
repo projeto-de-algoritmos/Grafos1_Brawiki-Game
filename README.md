@@ -29,7 +29,7 @@ Brawiki é um jogo de exploração na Wikipedia com o objetivo de encontrar o ca
 #### **Página de Vitória**
 ![Screenshot from 2023-09-26 00-18-53](https://github.com/projeto-de-algoritmos/Grafos1_Brawiki-Game/assets/69691521/b7900493-23df-4fa2-b011-713a1ecd2b10)
 
-### **ALgoritmos**
+### **Algoritmos**
 #### **BFS**
 ![bfs](https://github.com/projeto-de-algoritmos/Grafos1_Brawiki-Game/assets/69691521/caafaead-9c90-4a6e-9ee1-135e63dc9cfc)
 
@@ -79,8 +79,7 @@ Antes de executá-lo, você deve ter instalado o Python, Pip e Django na sua má
 3. Tente chegar ao seu Objetivo com o menor número de cliques possível
 
 ## **Vídeo de Apresentação**
-
-[Apresentação](./apresentação.mp4)
+[<img src="https://github.com/projeto-de-algoritmos/Grafos1_Brawiki-Game/assets/69691521/5e40f980-6a12-49e4-bfd4-0d4f67813779" width="50%">](https://youtu.be/ZtbDB1uqCPk)
 
 ##  **Referências**
 - [Wikispeedia navigation paths](https://snap.stanford.edu/data/wikispeedia.html)
